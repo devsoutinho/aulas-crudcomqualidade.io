@@ -1,1 +1,15 @@
-...asdusdahhdusauhas
+{
+  "todos": [
+    {
+      "date": "2023-03-22T01:35:16.536Z",
+      "content": "Primeira TODO",
+      "done": false
+    },
+    {
+      "date": "2023-03-22T01:35:16.536Z",
+      "content": "Segunda TODO",
+      "done": false
+    }
+  ],
+  "dogs": []
+}
