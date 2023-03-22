@@ -1,0 +1,25 @@
+{
+  "name": "aulas-crudcomqualidade.io",
+  "version": "1.0.0",
+  "description": "Projeto criando um CRUD com qualidade!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./core/crud.js",
+    "dev": "nodemon ./core/crud.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devsoutinho/aulas-crudcomqualidade.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devsoutinho/aulas-crudcomqualidade.io/issues"
+  },
+  "homepage": "https://github.com/devsoutinho/aulas-crudcomqualidade.io#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
