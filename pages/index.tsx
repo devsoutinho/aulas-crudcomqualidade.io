@@ -8,7 +8,7 @@ function HomePage() {
 
   return (
     <main>
-       <GlobalStyles themeName="coolGrey" />
+       <GlobalStyles themeName="devsoutinho" />
        <header
          style={{
             backgroundImage: `url('${bg}')`,
