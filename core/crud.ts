@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 import fs from "fs"; // ES6
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 // const fs = require("fs"); - CommonJS
 const DB_FILE_PATH = "./core/db";
 
@@ -22,23 +23,28 @@ function create(content: string): Todo {
     done: false,
   };
 
-  const todos: Array<Todo> = [
-    ...read(),
-    todo,
-  ];
+  const todos: Array<Todo> = [...read(), todo];
 
   // salvar o content no sistema
-  fs.writeFileSync(DB_FILE_PATH, JSON.stringify({
-    todos,
-    dogs: [],
-  }, null, 2));
+  fs.writeFileSync(
+    DB_FILE_PATH,
+    JSON.stringify(
+      {
+        todos,
+        dogs: [],
+      },
+      null,
+      2
+    )
+  );
   return todo;
 }
 
 function read(): Array<Todo> {
   const dbString = fs.readFileSync(DB_FILE_PATH, "utf-8");
   const db = JSON.parse(dbString || "{}");
-  if(!db.todos) { // Fail Fast Validations
+  if (!db.todos) {
+    // Fail Fast Validations
     return [];
   }
 
@@ -50,17 +56,24 @@ function update(id: UUID, partialTodo: Partial<Todo>): Todo {
   const todos = read();
   todos.forEach((currentTodo) => {
     const isToUpdate = currentTodo.id === id;
-    if(isToUpdate) {
+    if (isToUpdate) {
       updatedTodo = Object.assign(currentTodo, partialTodo);
     }
   });
 
-  fs.writeFileSync(DB_FILE_PATH, JSON.stringify({
-    todos,
-  }, null, 2));
+  fs.writeFileSync(
+    DB_FILE_PATH,
+    JSON.stringify(
+      {
+        todos,
+      },
+      null,
+      2
+    )
+  );
 
-  if(!updatedTodo) {
-    throw new Error("Please, provide another ID!")
+  if (!updatedTodo) {
+    throw new Error("Please, provide another ID!");
   }
 
   return updatedTodo;
@@ -69,22 +82,29 @@ function update(id: UUID, partialTodo: Partial<Todo>): Todo {
 function updateContentById(id: UUID, content: string): Todo {
   return update(id, {
     content,
-  })
+  });
 }
 
 function deleteById(id: UUID) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
-    if(todo.id !== id) {
+    if (todo.id !== id) {
       return false;
     }
     return true;
-  });  
+  });
 
-  fs.writeFileSync(DB_FILE_PATH, JSON.stringify({
-    todos: todosWithoutOne,
-  }, null, 2));
+  fs.writeFileSync(
+    DB_FILE_PATH,
+    JSON.stringify(
+      {
+        todos: todosWithoutOne,
+      },
+      null,
+      2
+    )
+  );
 }
 
 function CLEAR_DB() {
@@ -101,7 +121,7 @@ const thirdTodo = create("Segunda TODO");
 //   content: "Atualizada!",
 //   done: true,
 // });
-updateContentById(thirdTodo.id, "Atualizada!")
+updateContentById(thirdTodo.id, "Atualizada!");
 const todos = read();
 console.log(todos);
 console.log(todos.length);
