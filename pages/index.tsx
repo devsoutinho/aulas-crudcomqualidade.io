@@ -5,6 +5,8 @@ import { GlobalStyles } from "@ui/theme/GlobalStyles";
 const bg = "/bg.jpeg"; // inside public folder
 
 function HomePage() {
+  const todos = [];
+
   return (
     <main>
       <GlobalStyles themeName="devsoutinho" />
