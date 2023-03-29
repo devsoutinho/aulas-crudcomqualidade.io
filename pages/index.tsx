@@ -20,8 +20,6 @@ const todos = [
 ];
 
 function HomePage() {
-  console.log("todos", todos);
-
   return (
     <main>
       <GlobalStyles themeName="devsoutinho" />
