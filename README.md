@@ -3,7 +3,6 @@
 </p>
 
 
-
 > Repositório das aulas do curso "CRUDs com Qualidade" por DevSoutinho.
 
 ## ❓ Perguntas frequentes?
