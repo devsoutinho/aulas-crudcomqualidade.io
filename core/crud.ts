@@ -5,7 +5,6 @@ const DB_FILE_PATH = "./core/db";
 
 console.log("[CRUD]");
 
-
 type UUID = string;
 
 interface Todo {
@@ -87,6 +86,7 @@ function deleteById(id: UUID) {
     todos: todosWithoutOne,
   }, null, 2));
 }
+
 function CLEAR_DB() {
   fs.writeFileSync(DB_FILE_PATH, "");
 }
