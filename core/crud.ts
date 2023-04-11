@@ -112,11 +112,11 @@ function CLEAR_DB() {
 }
 
 // [SIMULATION]
-CLEAR_DB();
-create("Primeira TODO");
-const secondTodo = create("Segunda TODO");
-deleteById(secondTodo.id);
-create("Terceira TODO");
+// CLEAR_DB();
+// create("Primeira TODO");
+// const secondTodo = create("Segunda TODO");
+// deleteById(secondTodo.id);
+// create("Terceira TODO");
 // const secondTodo = create("Primeira TODO");
 // deleteById(secondTodo.id);
 // const thirdTodo = create("Segunda TODO");
@@ -125,6 +125,6 @@ create("Terceira TODO");
 // //   done: true,
 // // });
 // updateContentById(thirdTodo.id, "Atualizada!")
-const todos = read();
-console.log(todos);
-console.log(todos.length);
+// const todos = read();
+// console.log(todos);
+// console.log(todos.length);
