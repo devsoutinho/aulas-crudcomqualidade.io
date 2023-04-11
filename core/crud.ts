@@ -76,7 +76,7 @@ function deleteById(id: UUID) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
-    if(todo.id !== id) {
+    if(todo.id === id) {
       return false;
     }
     return true;
@@ -94,14 +94,17 @@ function CLEAR_DB() {
 // [SIMULATION]
 CLEAR_DB();
 create("Primeira TODO");
-const secondTodo = create("Primeira TODO");
+const secondTodo = create("Segunda TODO");
 deleteById(secondTodo.id);
-const thirdTodo = create("Segunda TODO");
-// update(thirdTodo.id, {
-//   content: "Atualizada!",
-//   done: true,
-// });
-updateContentById(thirdTodo.id, "Atualizada!")
+create("Terceira TODO");
+// const secondTodo = create("Primeira TODO");
+// deleteById(secondTodo.id);
+// const thirdTodo = create("Segunda TODO");
+// // update(thirdTodo.id, {
+// //   content: "Atualizada!",
+// //   done: true,
+// // });
+// updateContentById(thirdTodo.id, "Atualizada!")
 const todos = read();
 console.log(todos);
 console.log(todos.length);
