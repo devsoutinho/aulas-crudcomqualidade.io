@@ -89,7 +89,7 @@ function deleteById(id: UUID) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
-    if(todo.id === id) {
+    if(id === todo.id) {
       return false;
     }
     return true;
@@ -116,10 +116,7 @@ function CLEAR_DB() {
 // create("Primeira TODO");
 // const secondTodo = create("Segunda TODO");
 // deleteById(secondTodo.id);
-// create("Terceira TODO");
-// const secondTodo = create("Primeira TODO");
-// deleteById(secondTodo.id);
-// const thirdTodo = create("Segunda TODO");
+// const thirdTodo = create("Terceira TODO");
 // // update(thirdTodo.id, {
 // //   content: "Atualizada!",
 // //   done: true,
