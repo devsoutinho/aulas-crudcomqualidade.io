@@ -89,8 +89,44 @@ async function toggleDone(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
+async function deleteById(req: NextApiRequest, res: NextApiResponse) {
+  const QuerySchema = schema.object({
+    id: schema.string().uuid().nonempty(),
+  });
+  const parsedQuery = QuerySchema.safeParse(req.query);
+
+  // Fail Fast
+  if (!parsedQuery.success) {
+    res.status(400).json({
+      error: {
+        message: "Please, provide a valid ID",
+      },
+    });
+    return;
+  }
+
+  const todoId = parsedQuery.data.id;
+
+  try {
+    await todoRepository.deleteById(todoId);
+
+    res.status(200).json({
+      todo: {
+        id: todoId,
+      },
+    });
+  } catch {
+    res.status(400).json({
+      error: {
+        message: `Impossible to delete element with ID ${todoId}`,
+      },
+    });
+  }
+}
+
 export const todoController = {
   get,
   create,
   toggleDone,
+  deleteById,
 };

@@ -85,14 +85,14 @@ function updateContentById(id: UUID, content: string): Todo {
   });
 }
 
-function deleteById(id: UUID) {
+export function deleteById(id: UUID) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
     if (todo.id !== id) {
-      return false;
+      return true;
     }
-    return true;
+    return false;
   });
 
   fs.writeFileSync(
