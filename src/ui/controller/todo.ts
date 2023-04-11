@@ -73,9 +73,18 @@ function toggleDone({
     });
 }
 
+async function deleteById(id: string): Promise<void> {
+  try {
+    await todoRepository.deleteById(id);
+  } catch {
+    throw new Error("Failed to delete");
+  }
+}
+
 export const todoController = {
   get,
   filterTodosByContent,
   create,
   toggleDone,
+  deleteById,
 };

@@ -31,12 +31,6 @@
       "done": false
     },
     {
-      "id": "121c0fc0-bd22-419e-b0ab-57c9d1c777d8",
-      "date": "2023-04-09T23:46:09.731Z",
-      "content": "Alo alo w brazil",
-      "done": false
-    },
-    {
       "id": "806116b2-003d-4342-9eed-96ee2427519a",
       "date": "2023-04-10T01:59:22.579Z",
       "content": "asdasd",
@@ -55,21 +49,9 @@
       "done": false
     },
     {
-      "id": "0c39b683-1683-4e79-aec0-41b1e416ebaf",
-      "date": "2023-04-10T02:04:33.009Z",
-      "content": "Teste final!",
-      "done": false
-    },
-    {
       "id": "48cc2e4e-aa0c-4290-91b7-bd865d8e1ed9",
       "date": "2023-04-10T02:05:43.677Z",
       "content": "Nova ultima todo",
-      "done": false
-    },
-    {
-      "id": "51dba3fb-ba12-4777-be2a-75013440df9c",
-      "date": "2023-04-10T02:08:15.461Z",
-      "content": "saddashu",
       "done": false
     }
   ]

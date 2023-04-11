@@ -150,7 +150,31 @@ function HomePage() {
                     {todo.done && <s>{todo.content}</s>}
                   </td>
                   <td align="right">
-                    <button data-type="delete">Apagar</button>
+                    <button
+                      data-type="delete"
+                      onClick={function handleDelete() {
+                        todoController
+                          .deleteById(todo.id)
+                          .then(() => {
+                            setTodos((currentTodos) => {
+                              return currentTodos.filter((currentTodo) => {
+                                if (currentTodo.id === todo.id) {
+                                  return false;
+                                }
+                                return true;
+                              });
+                            });
+                          })
+                          .catch(() => {
+                            console.error(
+                              "FALHA ao deletar o item com o ID",
+                              todo.id
+                            );
+                          });
+                      }}
+                    >
+                      Apagar
+                    </button>
                   </td>
                 </tr>
               );
