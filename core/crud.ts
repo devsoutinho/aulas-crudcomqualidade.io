@@ -89,7 +89,7 @@ function deleteById(id: UUID) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
-    if(id === todo.id) {
+    if (id === todo.id) {
       return false;
     }
     return true;
