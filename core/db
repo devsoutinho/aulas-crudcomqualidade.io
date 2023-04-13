@@ -53,18 +53,6 @@
       "date": "2023-04-10T02:04:17.860Z",
       "content": "Teste",
       "done": false
-    },
-    {
-      "id": "0c39b683-1683-4e79-aec0-41b1e416ebaf",
-      "date": "2023-04-10T02:04:33.009Z",
-      "content": "Teste final!",
-      "done": false
-    },
-    {
-      "id": "48cc2e4e-aa0c-4290-91b7-bd865d8e1ed9",
-      "date": "2023-04-10T02:05:43.677Z",
-      "content": "Nova ultima todo",
-      "done": false
     }
   ]
 }
