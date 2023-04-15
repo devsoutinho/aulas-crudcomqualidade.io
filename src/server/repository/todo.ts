@@ -4,6 +4,7 @@ import {
   update,
   deleteById as dbDeleteById,
 } from "@db-crud-todo";
+import { dbSupabase } from "@server/infra/db/dbSupabase";
 import { HttpNotFoundError } from "@server/infra/errors";
 
 interface TodoRepositoryGetParams {
@@ -15,13 +16,18 @@ interface TodoRepositoryGetOutput {
   total: number;
   pages: number;
 }
-function get({
+async function get({
   page,
   limit,
-}: TodoRepositoryGetParams = {}): TodoRepositoryGetOutput {
+}: TodoRepositoryGetParams = {}): Promise<TodoRepositoryGetOutput> {
+  // TODO: Increment the integration
+  const dbClient = dbSupabase();
+  const { data, error } = await dbClient.from("todos").select("*");
+  const todos = data;
+
   const currentPage = page || 1;
   const currentLimit = limit || 10;
-  const ALL_TODOS = read().reverse();
+  const ALL_TODOS = todos as Todo[];
 
   const startIndex = (currentPage - 1) * currentLimit;
   const endIndex = currentPage * currentLimit;

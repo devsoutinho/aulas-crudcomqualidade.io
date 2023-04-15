@@ -58,8 +58,7 @@
       "id": "39419209-6c5b-48b8-bc8a-fd105dc076d5",
       "date": "2023-04-15T18:41:27.196Z",
       "content": "Nova todo",
-      "done": false
+      "done": true
     }
-  ],
-  "dogs": []
+  ]
 }
