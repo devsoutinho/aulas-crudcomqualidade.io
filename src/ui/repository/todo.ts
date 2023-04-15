@@ -43,7 +43,6 @@ export async function createByContent(content: string): Promise<Todo> {
 
   if (response.ok) {
     const serverResponse = await response.json();
-
     const ServerResponseSchema = schema.object({
       todo: TodoSchema,
     });
