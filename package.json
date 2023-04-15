@@ -11,7 +11,9 @@
     "start": "next start",
     "lint": "eslint './**/*.{jsx,jsx,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test dev http://localhost:3000 cy:run"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@types/react": "18.0.29",
     "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "cypress": "^12.9.0",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
@@ -37,7 +40,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "nodemon": "^2.0.21",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.7",
+    "start-server-and-test": "^2.0.0"
   },
   "dependencies": {
     "next": "^13.2.4",
