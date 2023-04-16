@@ -8,7 +8,7 @@ import { HttpNotFoundError } from "@server/infra/errors";
 import { Todo, TodoSchema } from "@server/schema/todo";
 
 // Supabase
-// =========
+// ==========
 // TODO: Separar em outro arquivo
 import { createClient } from "@supabase/supabase-js";
 
