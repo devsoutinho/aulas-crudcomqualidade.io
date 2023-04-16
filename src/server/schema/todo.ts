@@ -9,7 +9,7 @@ export const TodoSchema = schema.object({
   }),
   // .boolean()
   done: schema.string().transform((done) => {
-    if(done === "true") {
+    if (done === "true") {
       return true;
     }
     return false;
