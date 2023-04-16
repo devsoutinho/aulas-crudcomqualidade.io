@@ -154,7 +154,7 @@ function HomePage() {
                       data-type="delete"
                       onClick={function handleClick() {
                         todoController
-                          .deleteById("asisahuasu")
+                          .deleteById(todo.id)
                           .then(() => {
                             setTodos((currentTodos) => {
                               return currentTodos.filter((currentTodo) => {
