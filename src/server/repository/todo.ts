@@ -5,6 +5,7 @@ import {
   deleteById as dbDeleteById,
 } from "@db-crud-todo";
 import { HttpNotFoundError } from "@server/infra/errors";
+import { Todo, TodoSchema } from "@server/schema/todo";
 
 // Supabase
 // =========
@@ -29,19 +30,35 @@ async function get({
   page,
   limit,
 }: TodoRepositoryGetParams = {}): Promise<TodoRepositoryGetOutput> {
-  const { data, error, count } = await supabase.from("todos").select("*", {
-    count: "exact",
-  });
+  const currentPage = page || 1;
+  const currentLimit = limit || 10;
+  const startIndex = (currentPage - 1) * currentLimit;
+  const endIndex = currentPage * currentLimit - 1;
+
+  const { data, error, count } = await supabase
+    .from("todos")
+    .select("*", {
+      count: "exact",
+    })
+    .range(startIndex, endIndex);
 
   if (error) throw new Error("Failed to fetch data");
 
-  // TODO: Fix this to be properly validated by schema
-  const todos = data as Todo[];
+  const parsedData = TodoSchema.array().safeParse(data);
+
+  if (!parsedData.success) {
+    // throw parsedData.error;
+    throw new Error("Failed to parse TODO from database");
+  }
+
+  const todos = parsedData.data;
   const total = count || todos.length;
+  const totalPages = Math.ceil(total / currentLimit);
+
   return {
     todos,
     total,
-    pages: 1,
+    pages: totalPages,
   };
 
   // const currentPage = page || 1;
@@ -94,11 +111,3 @@ export const todoRepository = {
   toggleDone,
   deleteById,
 };
-
-// Model/Schema
-interface Todo {
-  id: string;
-  content: string;
-  date: string;
-  done: boolean;
-}
