@@ -8,7 +8,7 @@
 
 ### Onde comprar o curso?
 
-- [Clique aqui e vamos aprender juntos 🤝](https://crudcomqualidade.io/comprar)
+- [Clique aqui e vamos aprender juntos 🤝](https://crudcomqualidade.io/comprar?utm_source=github)
 
 ### O que eu vou aprender?
 
