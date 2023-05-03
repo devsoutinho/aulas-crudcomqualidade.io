@@ -18,10 +18,6 @@ Esse curso é o que eu queria ter tido quando comecei a programar. Eu já sabia 
 
 - Para ver todo o conteúdo, basta acessar o site e conferir a ementa atualizada http://crudcomqualidade.io/#aulas
 
-## 📝 Licença
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 📬 Contato
 
 - [YouTube](https://youtube.com/@DevSoutinho)
