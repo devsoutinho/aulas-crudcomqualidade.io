@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/13791385/219491917-1a378a81-6794-4b21-95ff-c712efa2f904.png" />
+   <img src="https://user-images.githubusercontent.com/13791385/236245102-49020c85-cb13-47e7-81ca-1a96fb1c6c52.png" />
 </p>
 
 > Repositório das aulas do curso "CRUDs com Qualidade" por DevSoutinho.
