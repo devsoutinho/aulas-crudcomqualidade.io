@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body>
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
